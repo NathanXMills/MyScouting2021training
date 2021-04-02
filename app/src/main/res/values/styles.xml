@@ -1,0 +1,44 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="tv_standard_grey">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/weighted</item>
+        <item name="android:layout_marginLeft">@dimen/standard_margin</item>
+        <item name="android:layout_marginRight">@dimen/standard_margin</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:gravity">bottom|left</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="et_standard_grey">
+        <item name="android:textSize">@dimen/textSizeThing</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:inputType">number</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/weighted</item>
+        <item name="android:layout_marginRight">@dimen/standard_margin</item>
+        <item name="android:layout_marginLeft">@dimen/standard_margin</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/et_standard_gray_border</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="btn_standard_white">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/weighted</item>
+        <item name="android:layout_marginLeft">@dimen/standard_margin</item>
+        <item name="android:layout_marginRight">@dimen/standard_margin</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="backgroundTint">@null</item>
+    </style>
+
+</resources>

@@ -31,7 +31,7 @@
         android:background="@color/transparent"/>
 
     <Button style="@style/btn_standard_white"
-        android:layout_weight="3"
+        android:layout_weight="1"
         android:text="@string/start"
         android:onClick="startNextActivity"/>
 

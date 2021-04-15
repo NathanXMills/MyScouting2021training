@@ -3,4 +3,7 @@
     <string name="match_number">Match Number</string>
     <string name="team_number">Team Number</string>
     <string name="start">Start</string>
+    <string name="placement_type_one">Placement Type One</string>
+    <string name="placement">Placement</string>
+    <string name="incap">INCAP</string>
 </resources>

@@ -12,7 +12,7 @@
         <TextView style="@style/tv_horizontal_black"
             android:id="@+id/tv_match_number"
             android:layout_weight="1"
-            android:text="@string/match_number"/>
+            android:text="@string/match_number" />
 
         <View style="@style/view_standard_vertical_separator" />
 
@@ -25,7 +25,7 @@
         <TextView style="@style/tv_horizontal_black"
             android:id="@+id/tv_team_number"
             android:layout_weight="1"
-            android:text="@string/team_number"/>
+            android:text="@string/team_number" />
     </LinearLayout>
 
     <LinearLayout
@@ -41,16 +41,20 @@
             android:text="@string/placement_type_one" />
 
         <Button style="@style/btn_standard_white"
+            android:id="@+id/btn_placement_one"
             android:layout_weight="1"
-            android:text="@string/placement" />
+            android:text="@string/btn_placement_one"
+            android:onClick="placementOneOnClick" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
         <Button style="@style/btn_standard_white"
+            android:id="@+id/btn_placement_two"
             android:layout_weight="1"
-            android:text="@string/placement" />
+            android:text="@string/btn_placement_two"
+            android:onClick="placementTwoOnClick" />
 
         <View
             android:layout_width="match_parent"
@@ -61,20 +65,24 @@
             android:text="@string/incap" />
 
         <Button style="@style/btn_standard_white"
+            android:id="@+id/btn_INCAP"
             android:layout_weight="1"
-            android:text="@string/incap" />
+            android:text="@string/incap"
+            android:onClick="incapOnClick" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="80dp" />
+            android:layout_height="50dp" />
 
         <Button style="@style/btn_standard_white"
+            android:id="@+id/btn_submit"
             android:layout_weight="1"
-            android:text="SUBMIT" />
+            android:text="SUBMIT"
+            android:onClick="submitOnClick" />
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="50dp" />
 
     </LinearLayout>
 

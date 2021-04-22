@@ -4,6 +4,7 @@ import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import androidx.core.content.ContextCompat
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.scouting_activity.*
 
@@ -54,6 +55,13 @@ class ScoutingActivity : Activity() {
     }
 
     public fun incapOnClick(view: View) {
+        when(match.isIncap) {
+            true ->
+                match.isIncap = false
+            false ->
+                match.isIncap = true
+        }
+        setBackgroundColor(match.isIncap, btn_INCAP)
     }
 
     public fun submitOnClick(view: View) {
@@ -61,5 +69,14 @@ class ScoutingActivity : Activity() {
 
     public fun updateButtonLabel(tv: Button, resource: Int, value: Int) {
         tv.text = getString(resource, value)
+    }
+
+    public fun setBackgroundColor(value:Boolean, btn: Button) {
+        when(value) {
+            true ->
+                btn.setBackgroundColor(ContextCompat.getColor(this, R.color.red))
+            false ->
+                btn.setBackground(ContextCompat.getDrawable(this, R.drawable.btn_standard_white_border))
+        }
     }
 }

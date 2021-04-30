@@ -5,18 +5,21 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.core.content.ContextCompat
+import com.example.myscouting2021training.util.MatchTimer
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.scouting_activity.*
 
-
 class ScoutingActivity : Activity() {
     lateinit var match: Match
+    lateinit var matchTimer : MatchTimer
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.scouting_activity)
         retrieveMatchData()
         initScoutingSetup()
+        matchTimer = MatchTimer(5000, tv_timer_display)
+        matchTimer.start()
     }
 
     private fun retrieveMatchData() {

@@ -50,6 +50,10 @@
             android:layout_width="match_parent"
             android:layout_height="20dp" />
 
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="0.75"
+            android:text="@string/placement_type_two" />
+
         <Button style="@style/btn_standard_white"
             android:id="@+id/btn_placement_two"
             android:layout_weight="1"

@@ -4,6 +4,7 @@
     <string name="team_number">Team Number</string>
     <string name="start">Start</string>
     <string name="placement_type_one">Placement Type One</string>
+    <string name="placement_type_two">Placement Type Two</string>
     <string name="incap">INCAP</string>
     <string name="btn_placement_one">GAME ELEMENT ONE - %1$s</string>
     <string name="btn_placement_two">GAME ELEMENT TWO - %1$s</string>

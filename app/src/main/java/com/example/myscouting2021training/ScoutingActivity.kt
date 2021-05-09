@@ -1,6 +1,7 @@
 package com.example.myscouting2021training
 
 import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -16,7 +17,6 @@ import kotlinx.android.synthetic.main.scouting_activity.tv_team_number
 class ScoutingActivity : Activity() {
     lateinit var match: Match
     lateinit var matchTimer : MatchTimer
-    lateinit var timeline : Timeline
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +25,7 @@ class ScoutingActivity : Activity() {
         initScoutingSetup()
         matchTimer = MatchTimer(5000, tv_timer_display)
         matchTimer.start()
-        timeline = Timeline(match.teamNumber)
+        match.timeline = Timeline(match.teamNumber)
     }
 
     private fun retrieveMatchData() {
@@ -42,12 +42,14 @@ class ScoutingActivity : Activity() {
         btn_placement_one.setOnLongClickListener{
             //this listener will follow the same formate as the PlacementOnClick functions bellow.
             match.elementOneCount--
+            match.timeline.add(ActionType.RemovePlacementOne, matchTimer.getTimeMs(), match.elementOneCount)
             updateButtonLabel(btn_placement_one, R.string.btn_placement_one, match.elementOneCount)
             //LongClickListeners are not void functions, meaning they need a boolean at the end to set off their availability
             return@setOnLongClickListener true
         }
         btn_placement_two.setOnLongClickListener{
             match.elementTwoCount--
+            match.timeline.add(ActionType.RemovePlacementTwo, matchTimer.getTimeMs(), match.elementTwoCount)
             updateButtonLabel(btn_placement_two, R.string.btn_placement_two, match.elementTwoCount)
             return@setOnLongClickListener true
         }
@@ -55,13 +57,13 @@ class ScoutingActivity : Activity() {
 
     public fun placementOneOnClick(view: View) {
         match.elementOneCount++
-        timeline.add(Timeline.ActionType.Placement, matchTimer.getTimeMs(), match.elementOneCount)
+        match.timeline.add(ActionType.PlacementOne, matchTimer.getTimeMs(), match.elementOneCount)
         updateButtonLabel(btn_placement_one, R.string.btn_placement_one, match.elementOneCount)
     }
 
     public fun placementTwoOnClick(view: View) {
         match.elementTwoCount++
-        timeline.add(Timeline.ActionType.Placement, matchTimer.getTimeMs(), match.elementTwoCount)
+        match.timeline.add(ActionType.PlacementTwo, matchTimer.getTimeMs(), match.elementTwoCount)
         updateButtonLabel(btn_placement_two, R.string.btn_placement_two, match.elementTwoCount)
     }
 
@@ -71,12 +73,18 @@ class ScoutingActivity : Activity() {
             false -> match.isIncap = true
         }
         updateButtonBackground(match.isIncap, btn_INCAP)
-        timeline.add(Timeline.ActionType.Placement, matchTimer.getTimeMs(), (if (match.isIncap) 1 else 0))
+        match.timeline.add(ActionType.Incap, matchTimer.getTimeMs(), (if (match.isIncap) 1 else 0))
     }
 
     public fun submitOnClick(view: View) {
         Log.e("Team number:", match.teamNumber)
-        Log.e("Timeline list", timeline.timelineList.toString())
+        Log.e("Timeline list", match.timeline.timelineList.toString())
+        intent = Intent( this, PostSubmitActivity::class.java)
+        if (matchTimer.isFinished ){
+            intent.putExtra(match_tag, Gson().toJson(match))
+            startActivity(intent)
+        }
+
     }
 
     public fun updateButtonLabel(tv: Button, resource: Int, value: Int) {

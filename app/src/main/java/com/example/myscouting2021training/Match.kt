@@ -5,5 +5,6 @@ data class Match (
     val matchNumber: String,
     var elementOneCount: Int = 0,
     var elementTwoCount: Int = 0,
-    var isIncap: Boolean = false
+    var isIncap: Boolean = false,
+    var timeline: Timeline = Timeline(teamNumber)
 )

@@ -6,8 +6,8 @@ import android.widget.TextView
 
 class MatchTimer (millisInFuture: Long, private val tv: TextView)
     : CountDownTimer(millisInFuture, 1000){
-
     var timeMS: Long? = null
+    var isFinished: Boolean = false
 
     @Override
     override fun onTick(millisUntilFinished: Long) {
@@ -17,6 +17,7 @@ class MatchTimer (millisInFuture: Long, private val tv: TextView)
     override fun onFinish() {
         tv.setTextColor(Color.RED)
         tv.text = "Done"
+        isFinished = true
     }
     fun getTimeMs(): Long {
         timeMS?.let {

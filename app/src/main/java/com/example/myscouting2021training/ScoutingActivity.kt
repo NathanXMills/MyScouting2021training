@@ -84,7 +84,6 @@ class ScoutingActivity : Activity() {
             intent.putExtra(match_tag, Gson().toJson(match))
             startActivity(intent)
         }
-
     }
 
     public fun updateButtonLabel(tv: Button, resource: Int, value: Int) {

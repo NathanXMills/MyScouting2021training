@@ -1,6 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    
+    <LinearLayout
+        android:id="@+id/Post_submit_match_number_bar"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal">
+    </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MatchInputActivity">
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="1"
+            android:text="@string/match_number"
+            android:layout_marginTop="30dp" />
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="3"
+            android:id="@+id/match_number_final_display"
+            android:gravity="top"
+            android:text="@string/match_number"/>
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="1"
+            android:text="Edit Match Number" />
+
+        <EditText style="@style/et_standard_grey"
+            android:layout_weight="3"
+            android:id="@+id/match_number_final_display_edit" />
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="1"
+            android:text="@string/team_number" />
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="3"
+            android:id="@+id/team_number_final_display"
+            android:gravity="top"
+            android:text="@string/team_number"/>
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="1"
+            android:text="Edit Team Number"/>
+
+        <EditText style="@style/et_standard_grey"
+            android:layout_weight="3"
+            android:id="@+id/team_number_final_display_edit"/>
+
+        <Button style="@style/btn_standard_white"
+            android:layout_weight="3"
+            android:text="Update"
+            android:onClick="UpdateOnClick"/>
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="1"
+            android:text="@string/incap" />
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="3"
+            android:id="@+id/incap_final_display"
+            android:gravity="top"
+            android:text="@string/incap"/>
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="1"
+            android:text="@string/game_element_one_value" />
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="3"
+            android:id="@+id/gameElementOne_final_display"
+            android:gravity="top"
+            android:text="@string/game_element_one_value"/>
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="1"
+            android:text="@string/game_element_two_value" />
+
+        <TextView style="@style/tv_standard_grey"
+            android:layout_weight="3"
+            android:id="@+id/gameElementTwo_final_display"
+            android:gravity="top"
+            android:text="@string/game_element_two_value"/>
+
+        <Button style="@style/btn_standard_white"
+            android:layout_weight="3"
+            android:text="@string/submit"
+            android:onClick="SubmitOnClick"
+            android:layout_marginBottom="30dp"/>
+    </LinearLayout>
+
+</RelativeLayout>

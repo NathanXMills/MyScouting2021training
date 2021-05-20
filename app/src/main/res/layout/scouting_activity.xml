@@ -81,7 +81,7 @@
         <Button style="@style/btn_standard_white"
             android:id="@+id/btn_submit"
             android:layout_weight="1"
-            android:text="SUBMIT"
+            android:text="@string/submit"
             android:onClick="submitOnClick" />
 
         <View

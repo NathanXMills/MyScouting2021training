@@ -5,8 +5,11 @@
     <string name="start">Start</string>
     <string name="placement_type_one">Placement Type One</string>
     <string name="placement_type_two">Placement Type Two</string>
+    <string name="submit">SUBMIT</string>
     <string name="incap">INCAP</string>
     <string name="btn_placement_one">GAME ELEMENT ONE - %1$s</string>
     <string name="btn_placement_two">GAME ELEMENT TWO - %1$s</string>
     <string name="placement">Placement</string>
+    <string name="game_element_one_value">Game Element One Value</string>
+    <string name="game_element_two_value">Game Element Two Value</string>
 </resources>
